@@ -10,6 +10,16 @@ class CoreApi {
         );
         return result;
     }
+    static token(payloads) {
+        let query = `client_key=${payloads.client_key}&card_number=${payloads.card_number}&card_exp_month=${payloads.card_exp_month}&card_exp_year=${payloads.card_exp_year}&card_cvv=${payloads.car_cvv}`
+
+        let result = ApiRequestor.get(
+            Config.getBaseUrl() + "/token?" + query,
+            Config.serverKey,
+            payloads
+        );
+        return result;
+    }
 }
 
 module.exports = CoreApi

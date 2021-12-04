@@ -20,3 +20,7 @@ Route.group(() => {
   Route.post("/charge", "Payments/IndexController.bankTransfer");
 }).prefix("va");
 
+Route.group(() => {
+  Route.post("/token", "Payments/IndexController.getToken");
+  Route.post("/charge", "Payments/IndexController.creditCard");
+}).prefix("cc");
