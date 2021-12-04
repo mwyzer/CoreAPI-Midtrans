@@ -24,3 +24,11 @@ Route.group(() => {
   Route.post("/token", "Payments/IndexController.getToken");
   Route.post("/charge", "Payments/IndexController.creditCard");
 }).prefix("cc");
+
+Route.group(() => {
+  Route.post("/gopay", "Payments/IndexController.goPay");
+}).prefix("ew");
+
+Route.group(() => {
+  Route.post("/charge", "Payments/IndexController.cStore");
+}).prefix("cs");
